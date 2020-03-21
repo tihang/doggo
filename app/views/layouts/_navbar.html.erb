@@ -1,6 +1,6 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand text-info bold" href="/">
+  <a class="navbar-brand text-info bold ml-1" href="/">
    <%= image_tag 'favicon.png', style: "height:70px; width:70px; object-fit:cover;" %> DoGGo
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -10,14 +10,33 @@
     <ul class="navbar-nav">
       <%= nav_link "Home", root_path, :get %>
       <%= nav_link "About", about_path, :get %>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Seach</a>
-      </li>
+
     </ul>
 
     <ul class="nav navbar-nav ml-auto">
-      <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary m-2" %>
-      <%= link_to "Sign in", new_user_session_path, class: "btn btn-info m-2" %>
+      <% if !user_signed_in? %>
+        <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary m-2" %>
+        <%= link_to "Sign in", new_user_session_path, class: "btn btn-info m-2" %>
+      <% else %>
+        <div class="dropdown">
+
+            <div class="flex flex-column align-items-center">
+                <%= image_tag 'new_user', class: "dropdown-toggle rounded-circle border border-info", style: "height:60px; width:60px;" %>
+                <button type="button" class="dropdown-toggle dropdown-toggle-split btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <span class="sr-only">Toggle Dropdown</span>
+                      <span class="text-inactive"><%= current_user.email %></span>
+                </button>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                  <%= nav_link "Dashboard", dashboard_index_path, :get %>
+                  <%= nav_link "Edit Profile", root_path, :get %>
+                  <%= nav_link "Booking History", root_path, :get %>
+                  <%= nav_link "Upload profile picture", root_path, :get %>
+                  <%= nav_link "Logout", destroy_user_session_path, :delete %>
+                </div>
+            </div>
+        </div>
+
+      <% end %>
     </ul>
   </div>
 </nav>

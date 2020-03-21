@@ -1,8 +1,5 @@
 <h1>Profile Page</h1>
-<% if current_user %>
-    <p>Welcome <%= current_user.email %></p>
-    <%= link_to "Logout", destroy_user_session_path, method: "delete", class:"btn btn-danger" %>
-<% else %>
-    <%= link_to "Sign In", new_user_session_path, class: "btn btn-primary" %>
-    <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-info" %>
-<% end %>
+
+<p>Welcome <%= current_user.email %></p>
+
+<h1>Dashboard contents coming soon..</h1>
