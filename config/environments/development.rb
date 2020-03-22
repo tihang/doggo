@@ -36,13 +36,13 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
+  config.action_mailer.default_url_options = { host: 'my-app.herokuapp.com' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
   address:              ENV['MAILGUN_SMTP_SERVER'], 
   port:                 ENV['MAILGUN_SMTP_PORT'],
-  domain:               'localhost:3000',
+  domain:               'my-app.herokuapp.com',
   user_name:            ENV['MAILGUN_SMTP_LOGIN'],
   password:             ENV['MAILGUN_SMTP_PASSWORD'],
   authentication:       'plain',
