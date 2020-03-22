@@ -5,7 +5,7 @@
         <%# User avatar %>
         <%= image_tag 'new_user', class: "rounded-circle border border-info mb-3", style: "height:30px; width:30px;" %>
           <%# Only allow edit and delete actions if post belongs to user %>
-          <% if current_user.id === post.user_id %>
+          <% if user_signed_in? && current_user.id === post.user_id %>
             <div class="flex">
                 <%# Edit link %>
               <%= link_to edit_post_path(post), class: "flex flex-column align-items-center" do %>
