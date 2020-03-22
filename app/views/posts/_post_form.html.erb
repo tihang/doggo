@@ -1,0 +1,15 @@
+<%= form_with model: post, validate: true, class: "form-group" do |f| %>
+
+   <div class="form-group">
+        <%= f.label :title, "Title: " %>
+        <%= f.text_field :title, class: "form-control" %>
+   </div>
+
+   <div class="form-group">
+        <%= f.label :body, "Description: " %>
+        <%= f.text_area :body, class: "form-control", rows: 8 %>
+   </div>
+
+<%= f.submit class: "btn btn-success" %>
+
+<% end %>

@@ -11,5 +11,6 @@ module ApplicationHelper
                  link_to(text, path, class: "nav-link", method: method)
              end
         end   
-     end
+    end
+
 end

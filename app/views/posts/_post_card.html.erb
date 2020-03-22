@@ -1,0 +1,36 @@
+
+<div class="card mt-3 mb-3" style="width: 100%;">   <div class="card-body">
+    <div class="container">
+      <div class="flex justify-content-between">
+        <%# User avatar %>
+        <%= image_tag 'new_user', class: "rounded-circle border border-info mb-3", style: "height:30px; width:30px;" %>
+          <%# Only allow edit and delete actions if post belongs to user %>
+          <% if current_user.id === post.user_id %>
+            <div class="flex">
+                <%# Edit link %>
+              <%= link_to edit_post_path(post), class: "flex flex-column align-items-center" do %>
+                <i class="far fa-edit text-info ml-4 mr-4"></i>
+                <p class="text-muted">Edit</p>
+              <% end %>
+              <%# Delete link %>
+              <%= link_to post_path(post), method: :delete, data: { confirm: "Are you sure?"}, class: "flex flex-column align-items-center" do %>
+                <i class="far fa-trash-alt text-danger ml-4 mr-4"></i>
+                <p class="text-muted">Delete</p>
+              <% end %>    
+            </div>
+          <% end %>
+
+      </div>
+      <h5 class="card-title"><%= post.title %></h5>
+      <p class="card-text"><%= post.body %></p>
+    </div>
+
+    <div class="container flex justify-content-between flex-wrap mt-3">
+      <div class="flex flex-column align-items-center">
+        <a href="#" class=""><i class="far fa-heart text-danger"></i></a>
+        <p class="text-muted"><%= post.likes %></p>
+      </div>
+      <p class="text-muted">Posted: <%= time_ago_in_words(post.created_at) %> ago</p>
+    </div>
+  </div>
+</div>
