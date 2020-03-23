@@ -1,5 +1,15 @@
+<%# Show message if user is unverified %>
+<% if !current_user.confirmed_at %>
+  <div class="alert alert-info" role="alert">
+    Your account is not verified. Please check your email and verify it within
+    <%# Calculating time left to verify account %>
+    <%= distance_of_time_in_words(current_user.created_at, User.allow_unconfirmed_access_for.from_now) %>.
+  </div>
+<% end %>
+
 <div class="flex justify-content-between align-items-center flex-wrap">
     <h2>Dashboard</h2>
+    
     <div class="flex flex-column align-items-center">
         <%= image_tag 'new_user', class: "rounded-circle border border-info", style: "height:60px; width:60px; object-fit:cover" %>
     

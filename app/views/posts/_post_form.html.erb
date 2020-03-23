@@ -1,19 +1,20 @@
 <%= form_with model: post, validate: true, class: "form-group" do |f| %>
+    <div class="mb-5 mt-3">
+        <%= link_to dashboard_index_path, class: "text-info" do %>
+            <i class="fas fa-arrow-left"></i> Back
+        <% end %>
+    </div>
 
-   <div class="form-group">
+    <div class="form-group">
         <%= f.label :title, "Title: " %>
         <%= f.text_field :title, class: "form-control" %>
-   </div>
+    </div>
 
-   <div class="form-group">
+    <div class="form-group">
         <%= f.label :body, "Description: " %>
         <%= f.text_area :body, class: "form-control", rows: 8 %>
-   </div>
+    </div>
 
 <%= f.submit class: "btn btn-success" %>
-<div class="mt-5 mb-4">
-    <%= link_to dashboard_index_path, class: "text-info" do %>
-        <i class="fas fa-arrow-left"></i> Back
-    <% end %>
-</div>
+
 <% end %>
