@@ -62,13 +62,15 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
+   # ActionMailer Config
+  config.action_mailer.default_url_options = { :host => 'https://doggo-web.herokuapp.com'}
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-  address: 'smtp.mailgun.org',
-  port:                 587,
+  address: 'smtp.sendgrid.net',
+  port:                 25,
   domain:               'heroku.com',
-  user_name:            ENV['MAILGUN_SMTP_LOGIN'],
-  password:             ENV['MAILGUN_SMTP_PASSWORD'],
+  user_name:            ENV['SENDGRID_USERNAME'],
+  password:             ENV['SENDGRID_PASSWORD'],
   authentication:       'plain',
   enable_starttls_auto: true
   }
