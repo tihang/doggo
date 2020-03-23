@@ -31,7 +31,7 @@ gem 'devise'
 gem 'devise-bootstrap-views', '~> 1.0'
 
 # Mailer
-gem 'sendgrid-ruby'
+gem 'sendgrid-actionmailer'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
