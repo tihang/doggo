@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { confirmations: 'confirmations' }
   resources :dashboard, only: [:index, :edit]
   resources :posts, only: [:new, :create, :edit, :update, :destroy]
-  resources :search, only: [:index]
+  resources :search, only: [:index, :show]
 end

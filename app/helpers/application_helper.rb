@@ -1,4 +1,7 @@
 module ApplicationHelper
+    
+    include Pagy::Frontend
+
     def nav_link(text, path, method)
         if current_page?(path)
              content_tag(:li, class: "nav-items mx-2 active") do
@@ -13,4 +16,9 @@ module ApplicationHelper
         end   
     end
 
+
+    def chop_email(email)
+        return email.split("@")[0]
+    end
+    
 end

@@ -1,11 +1,21 @@
-<h1>Search Page</h1>
+<h2>Search</h2>
 
-<h5>We have <%= pluralize(@posts.count, "listing") %></h5>
+
+<h5 class="text-success">We have a total of <%= pluralize(@pagy.count, "listing") %></h5>
+<h6 class="text-info"><%= pluralize(@posts.count, "listing") %> on this page</h6>
 
 <div class="container mt-5 mb-5">
-    
-<% @posts.each do |post| %>
-    <%= render partial: 'posts/post_card', locals: { post: post } %>
-<% end %>
+
+    <div class="container flex justify-content-center">
+        <%== render partial: 'pagy/bootstrap_nav', locals: {pagy: @pagy} if @pagy.pages > 7%>
+    </div>
+        
+    <% @posts.each do |post| %>
+        <%= render partial: 'posts/post_card', locals: { post: post } %>
+    <% end %>
+
+    <div class="container flex justify-content-center">
+        <%== render partial: 'pagy/bootstrap_nav', locals: {pagy: @pagy} if @pagy.pages > 7%>
+    </div>
 
 </div>

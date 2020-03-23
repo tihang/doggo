@@ -1,9 +1,20 @@
 
-<div class="card mt-3 mb-3" style="width: 100%;">   <div class="card-body">
+<div class="shadow-sm card mt-3 mb-3" style="width: 100%;">   <div class="card-body">
     <div class="container">
       <div class="flex justify-content-between">
-        <%# User avatar %>
-        <%= image_tag 'new_user', class: "rounded-circle border border-info mb-3", style: "height:30px; width:30px;" %>
+        <div class="flex align-self-center">
+          <%# User avatar %>
+          <%= image_tag 'new_user', class: "shadow rounded-circle border border-info mb-3 mr-3", style: "height:30px; width:30px; object-fit:cover;" %>
+          <%# Username %>
+          <span class="text-muted"><%= chop_email(post.user.email) %> 
+            <%# Verified checkmark or unverfied mark %>
+            <% if post.user.confirmed_at %>
+              <i class="text-success far fa-check-circle" data-toggle="tooltip" data-placement="top" title="Verified"></i>
+            <% else %>
+              <i class="text-warning fas fa-exclamation-circle" data-toggle="tooltip" data-placement="top" title="Confirm email to get verified"></i>
+            <% end %>
+          </span>
+        </div>
           <%# Only allow edit and delete actions if post belongs to user %>
           <% if user_signed_in? && current_user.id === post.user_id %>
             <div class="flex">
@@ -21,15 +32,24 @@
           <% end %>
 
       </div>
-      <h5 class="card-title"><%= post.title %></h5>
-      <p class="card-text"><%= post.body %></p>
+      <%= link_to search_path(post), class: "text-info" do %>
+        <h5 class="card-title"><%= post.title %></h5>
+      <% end %>
+      <%# <p class="card-text"><%= post.body %></p> 
     </div>
 
     <div class="container flex justify-content-between flex-wrap mt-3">
       <div class="flex flex-column align-items-center">
-        <a href="#" class=""><i class="far fa-heart text-danger"></i></a>
-        <p class="text-muted"><%= post.likes %></p>
+        <%# Like button %>
+        <%= link_to search_path(post) do %>
+          <span class="text-lg text-muted">
+            <%= post.likes %>
+              <i class="far fa-comment-dots"></i>
+          </span>
+        <% end %>
       </div>
+      
+      <%# Timestamp %>
       <p class="text-muted">Posted: <%= time_ago_in_words(post.created_at) %> ago</p>
     </div>
   </div>
