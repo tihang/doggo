@@ -3,8 +3,10 @@
   <a class="navbar-brand text-info bold ml-1" href="/">
    <%= image_tag 'favicon.png', style: "height:70px; width:70px; object-fit:cover;" %> DoGGo
   </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+  <button class="hamburger hamburger--elastic navbar-toggler shadow-sm" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation" style="outline:none;">
+    <span class="hamburger-box">
+    <span class="hamburger-inner"></span>
+  </span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
@@ -23,4 +25,5 @@
       <% end %>
     </ul>
   </div>
+
 </nav>

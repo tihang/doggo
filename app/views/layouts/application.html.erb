@@ -44,7 +44,13 @@
       // Fire up bootstrap tooltip
       $(function () {
         $('[data-toggle="tooltip"]').tooltip()
-      })
+      });
+
+      // Hamburger menu animation helper
+      var $hamburger = $(".hamburger");
+        $hamburger.on("click", function(e) {
+          $hamburger.toggleClass("is-active");
+        });
     </script>
   </body>
 </html>
