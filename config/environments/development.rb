@@ -37,16 +37,15 @@ Rails.application.configure do
   config.action_mailer.perform_caching = false
 
 
-  config.action_mailer.default_url_options = { host: 'my-app.herokuapp.com' }
+  config.action_mailer.default_url_options = { host: 'localhost:3000' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-  address:              ENV['MAILGUN_SMTP_SERVER'], 
-  port:                 587,
-  domain:               'my-app.herokuapp.com',
-  user_name:            ENV['MAILGUN_SMTP_LOGIN'],
-  password:             ENV['MAILGUN_SMTP_PASSWORD'],
-  authentication:       'plain',
-  enable_starttls_auto: true
+    :user_name => 'eb921171610acb',
+    :password => 'd824bd42f856d4',
+    :address => 'smtp.mailtrap.io',
+    :domain => 'smtp.mailtrap.io',
+    :port => '2525',
+    :authentication => :cram_md5
   }
 
   # Print deprecation notices to the Rails logger.
