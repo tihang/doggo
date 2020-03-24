@@ -8,11 +8,19 @@
 
 Post.destroy_all
 
-100.times do
+50.times do
     Post.create(
         title: Faker::Lorem.paragraph, 
         body: Faker::Lorem.paragraph(sentence_count: 12), 
-        user_id: 31
+        user_id: User.first.id
+    )
+end
+
+50.times do
+    Post.create(
+        title: Faker::Lorem.paragraph, 
+        body: Faker::Lorem.paragraph(sentence_count: 12), 
+        user_id: User.second.id
     )
 end
 

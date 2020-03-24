@@ -1,10 +1,9 @@
 <%# Show message if user is unverified %>
 <% if !current_user.confirmed_at %>
   <div class="alert alert-info alert-dismissible fade show" role="alert">
-    Your account is not verified. Please check your email and verify it within.
+    Your account is not verified. Confirm your email within 
     <%# Calculating time left to verify account %>
     <%= distance_of_time_in_words(current_user.created_at, User.allow_unconfirmed_access_for.from_now) %>.
-
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
       <span aria-hidden="true">&times;</span>
     </button>

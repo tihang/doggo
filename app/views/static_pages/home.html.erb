@@ -1,19 +1,11 @@
-<section class="hero is-primary is-bold is-large">
-  <div class="hero-body">
-    <div class="container">
-      <h1 class="title">
-   
-      </h1>
-      <h2 class="subtitle">
- 
-      </h2>
-      <h2 class="subtitle">
-    
-      </h2>
-      
-    </div>
+
+<div class="jumbotron shadow mt-5 mb-5 flex flex-column justify-content-end" style="background-image:url(<%= asset_path('jumbotron_dog3.jfif') %> ); background-position: 50% 17%; height:400px">
+  <h1 class="text-white flex justify-content-center align-items-end font-weight-bold">DoGGo</h1>
+  <div class="flex justify-content-center align-items-end">
+    <%= link_to "Start search", search_index_url, class:"btn btn-info btn-lg" %>
   </div>
-</section>
+</div>
+
 
 <div class="jumbotron shadow" style="background-image:linear-gradient(141deg,#009e6c 0,#00d1b2 71%,#00e7eb 100%);">
   <div class="container pl-5">
@@ -28,7 +20,7 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-4 col-sm-12 card mx-auto text-center" style="width: 18rem;">
+        <div class="col-lg-3 col-md-4 col-sm-12 card mx-auto text-center shadow-sm mb-3 mt-3">
             <%= image_tag 'illustrations/undraw_good_doggy', class: "card-img-top pt-3" %>
             <div class="card-body">
                 <h5 class="card-title">Care giving like never before</h5>
@@ -39,7 +31,7 @@
             </div>
         </div>
 
-        <div class="col-md-4 col-sm-12 card mx-auto text-center" style="width: 18rem;">
+        <div class="col-lg-3 col-md-4 col-sm-12 card mx-auto text-center shadow-sm mb-3 mt-3">
             <%= image_tag 'illustrations/undraw_dog_walking', class: "card-img-top pt-3" %>
             <div class="card-body">
                 <h5 class="card-title">Fit your schedule</h5>
@@ -50,7 +42,7 @@
             </div>
         </div>
 
-        <div class="col-md-4 col-sm-12 card mx-auto text-center" style="width: 18rem;">
+        <div class="col-lg-3 col-md-4 col-sm-12 card mx-auto text-center shadow-sm mb-3 mt-3">
             <%= image_tag 'illustrations/undraw_team_spirit', class: "card-img-top pt-3" %>
             <div class="card-body">
                 <h5 class="card-title">Awesome community</h5>
@@ -61,15 +53,4 @@
             </div>
         </div>
     </div>
-</div>
-
-
-
-<div class="jumbotron shadow m-5" style="background-image:linear-gradient(141deg,#009e6c 0,#00d1b2 71%,#00e7eb 100%);">
-  <div class="container pl-5">
-    <h1 class="display-5 text-white">DoGGo</h1>
-    <p class="lead text-white">Your Dog on the Go..</p>
-    <p class="text-white">Try Doggo today.</p>
-    <%= link_to "Start search", search_index_url, class:"btn btn-dark btn-lg" %>
-  </div>
 </div>

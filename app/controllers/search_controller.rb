@@ -2,7 +2,7 @@ class SearchController < ApplicationController
     before_action :set_post, only: [:show]
 
     def index
-        @pagy, @posts = pagy(Post.all.order("posts.created_at DESC"), items: 8, size: [1,0,0,1])
+        @pagy, @posts = pagy(Post.all.order("posts.created_at DESC"), items: 8, size: [1,1,1,1])
     end
 
     def show
