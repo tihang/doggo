@@ -25,6 +25,12 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'pagy', '~> 3.5' # omit patch digit and use the latest if possible
 
+gem 'bulma-rails', '~> 0.7.4'
+gem 'bulma-extensions-rails', '~> 1.0.30'
+
+gem "mini_magick"
+gem 'gravatar_image_tag'
+
 gem 'client_side_validations'
 
 gem 'devise'
@@ -33,8 +39,11 @@ gem 'devise-bootstrap-views', '~> 1.0'
 # Mailer
 gem 'sendgrid-actionmailer'
 
+# Storage
+gem "aws-sdk-s3", require: false
+
 # Use Active Storage variant
-# gem 'image_processing', '~> 1.2'
+gem "image_processing", "~> 1.0"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false

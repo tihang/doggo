@@ -22,7 +22,7 @@
                 <span class="sr-only">Toggle Dropdown</span>
           </div>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-            <%= nav_link "Upload photo", root_path, :get %>
+            <%= nav_link "Edit Account", edit_user_registration_path , :get %>
             <%= nav_link "Booking History", root_path, :get %>
             <%= nav_link "Logout", destroy_user_session_path, :delete %>
           </div>

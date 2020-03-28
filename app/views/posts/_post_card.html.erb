@@ -1,6 +1,7 @@
 
-<div class="shadow-sm card mt-3 mb-3" style="width: 100%;">   <div class="card-body">
-    <div class="container">
+<div class="shadow-sm card mt-3 mb-3" style="width: 100%;">   
+  <div class="card-body">
+    <div class="container-fluid">
       <div class="flex justify-content-between">
         <div class="flex align-self-center">
           <%# User avatar %>
@@ -18,7 +19,7 @@
           <%# Only allow edit and delete actions if post belongs to user %>
           <% if user_signed_in? && current_user.id === post.user_id %>
             <div class="flex">
-                <%# Edit link %>
+              <%# Edit link %>
               <%= link_to edit_post_path(post), class: "flex flex-column align-items-center" do %>
                 <i class="far fa-edit text-info ml-4 mr-4"></i>
                 <p class="text-muted">Edit</p>
@@ -54,3 +55,5 @@
     </div>
   </div>
 </div>
+
+<hr>
